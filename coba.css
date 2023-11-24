@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+/* .news-category {
+  display: flex;
+  justify-content: center;
+}
+
+.news-item {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+} */
+
+
+
+.news-category {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Mengatur susunan vertikal */
+  align-items: center; /* Menengahkan elemen-elemen */
+}
+
+.news-item {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+.news-item i {
+  margin-right: 10px;
+}
+
+.news-item i, .news-title {
+  color: #333;
+}
+
+
+/* CSS lainnya tetap sama seperti sebelumnya */
+
+.news-category {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Mengatur susunan vertikal */
+  align-items: center; /* Menengahkan elemen-elemen */
+}
+
+.news-item {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
