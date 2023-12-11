@@ -1,0 +1,538 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --body-color: whitesmoke;
+  --nav-color: #E6AA48;
+  --side-nav: #E6AA48;
+  --text-color: #000;
+  --secondary-color: #ca8a04;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.4s ease;;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: #E6AA48;
+}
+
+/* ===== navbar ===== */
+
+.times-btn{
+  display: none;
+}
+
+.nav-bar{
+  background: #333;
+  height: 0;
+  overflow: hidden;
+}
+
+.show-nav{
+  height: auto;
+}
+
+/* ================================= INI CSS BUAT NAVBAR DAN KATEGORI BERITA ================================== */
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 70px;
+  background: #E6AA48;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+nav .navbar{
+  height: 100%;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  /* background: red; */
+  padding: 0 50px;
+}
+.navbar .logo a{
+  font-size: 30px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .navbar .nav-links{
+  line-height: 70px;
+  height: 100%;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 14px;
+}
+nav .navbar .links li a{
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+  }
+
+nav .navbar .links li .arrow{
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #000;
+  transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: #E6AA48;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+  display: none;
+  z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+}
+.navbar .links li .sub-menu .more-arrow{
+  line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+  /* line-height: 40px; */
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+  display: block;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  width: 100px;
+}
+
+.logo-name img{
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+
+.navbar .search-box{
+  position: relative;
+   height: 40px;
+  width: 40px;
+}
+.navbar .search-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .search-box .input-box{
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80px;
+  height: 60px;
+  width: 300px;
+  background: #E6AA48;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.navbar.showInput .search-box .input-box{
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: #E6AA48;
+}
+.search-box .input-box::before{
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #E6AA48;
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+.search-box .input-box input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 280px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+}
+.navbar .nav-links .sidebar-logo{
+  display: none;
+}
+.navbar .bx-menu{
+  display: none;
+}
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .logo a{
+    font-size: 27px;
+  }
+  nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav .navbar .links li a{
+    font-size: 15px;
+  }
+}
+@media (max-width:800px){
+  nav{
+    /* position: relative; */
+  }
+  .navbar .bx-menu{
+    display: block;
+  }
+  nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  #E6AA48;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+  .navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #000;
+  }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+      font-size: 25px;
+      color: #000;
+    }
+  nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+  }
+  nav .navbar .links li .arrow{
+    line-height: 40px;
+  }
+nav .navbar .links li{
+    display: block;
+  }
+nav .navbar .links li .sub-menu{
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  display: none;
+}
+nav .navbar .links li .sub-menu li{
+  border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  display: none;
+  position: relative;
+  left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(0deg);
+  }
+  .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+  }
+  .navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+  }
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu{
+      display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+}
+    .navbar .nav-links.show2 .links .more-arrow{
+      transform: rotate(90deg);
+    }
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+  max-width: 100%;
+  } 
+}
+
+/* ======================= menu =================== */
+
+#menu-icon{
+  font-size: 28px;
+  margin-left: 10px;
+  z-index: 6;
+}
+
+section{
+  padding: 0 15%;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-img{
+  width: 500px;
+  height: 500px;
+}
+
+.home-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-text{
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.home-text span{
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.home-text  h1{
+  font-size: 50px;
+  margin: 23px 0;
+}
+
+.home-text p{
+  font-size: var(--p-font);
+  font-weight: 400;
+  color: black;
+  line-height: 30px;
+  margin-bottom: 30px;
+
+}
+.btn{
+  color: black;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 100px;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 30px;
+
+}
+
+.btn:hover{
+  transform: translateY(-5px);
+  color: white;
+  background: black;
+}
+
+.share {
+  margin-top: 5rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.share p {
+  font-size: 17px;
+  color: black;
+  margin-right: 25px;
+}
+
+.social i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  background: black; /* Pastikan titik-koma ada di sini */
+  box-shadow: 0px 20px 40px #00000070;
+  border: 1px solid #3b3b3b;
+  border-radius: 50%;
+  color: white; /* Perbaikan warna teks */
+  font-size: 20px;
+  margin: 0 7px;
+  transition: all 0.6s ease-in-out;
+}
+
+.social i:hover{
+  transform: translateY(-10px);
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Untuk tata letak vertikal pada perangkat mobile */
+      align-items: center;
+      text-align: center;
+  }
+
+  .navbar a {
+      margin-bottom: 10px; /* Jarak antara link pada navigasi */
+  }
+
+  .home {
+      padding-top: 5rem;
+      flex-direction: column; /* Tata letak vertikal pada perangkat mobile */
+      align-items: center;
+      text-align: center;
+  }
+
+  .home-img {
+      padding-top: 1rem;
+      width: 80%; /* Ukuran gambar disesuaikan untuk perangkat mobile */
+      height: auto;
+      max-width: 300px; /* Ukuran maksimum untuk gambar */
+  }
+
+  .home-text {
+      position: relative;
+      top: auto;
+      width: 100%;
+      margin-top: 20px;
+      text-align: center;
+  }
+
+  .home-text span {
+      top: auto;
+      padding: 10px 20px; /* Padding untuk teks */
+      font-size: 14px; /* Ukuran font disesuaikan untuk perangkat mobile */
+  }
+
+  .home-text h1 {
+      font-size: 30px; /* Ukuran font disesuaikan untuk perangkat mobile */
+      margin: 20px 0;
+  }
+
+  .share {
+      padding-top: 8rem;
+      padding-bottom: 2rem;
+      padding-left: 1.2rem;
+      position: relative;
+      bottom: auto;
+      left: auto;
+      margin: 30px 0; /* Jarak antara ikon sosial */
+      display: flex;
+      justify-content: center;
+  }
+  
+  .share p {
+    font-size: 15px;
+    margin-right: 20px;
+  }
+  .social i {
+    height: 35px;
+    width: 35px;
+    margin: 0 20px 10px 0; /* Jarak antara ikon sosial */
+  }
+}
