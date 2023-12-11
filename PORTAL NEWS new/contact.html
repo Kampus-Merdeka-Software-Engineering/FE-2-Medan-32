@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- BOX ICON -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <title>Web Design Mastery | Responsive Portfolio</title>
+  </head>
+  <body>
+    <!-- ============================ NAVBAR ================================ -->
+      <!-- NAVBAR -->
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href = "landingpage.html" class ="logo nav logo"> <img src = "gambar/logo.png"></a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name"><img src = "gambar/logo.png"></a></span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="main.html">HOME</a></li>
+          <li>
+            <a href="#">CATEGORY</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="main.html">World News</a></li>
+              <li><a href="sports.html">Sports</a></li>
+              <li><a href="politic.html">Politic</a></li>
+              <li><a href="entertaiment.html">Entertaiment</a></li>
+              <li><a href="tech.html">Technology</a></li>
+            </ul>
+          </li>
+          <li><a href="aboutus.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+    <!-- ================================== -->
+    <section class="home">
+      <div class="home-text">
+          <span>Cat News</span>
+          <h1>Contact Team</h1>
+          <p>Hi Buddy You Can Contact Us With Whatsapp.
+          </p>
+          <div class ="btn">
+              Whatsapp
+          </div>
+      </div>
+      <div class ="home-img">
+          <img src="gambar/kucing.png">
+      </div>
+  </section>
+
+  <div class="share">
+      <p>Connect with:</p>
+
+      <div class="social">
+          
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-instagram-fill"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+      </div>
+  </div>
+
+    <!-- script -->
+    <script>
+      const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+      
+      //   js code to toggle sidebar
+      sidebarOpen.addEventListener("click" , () =>{
+          nav.classList.add("active");
+      });
+  
+      body.addEventListener("click" , e =>{
+          let clickedElm = e.target;
+  
+          if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+              nav.classList.remove("active");
+          }
+      });
+  
+      </script>
+
+  </body>
+</html>
