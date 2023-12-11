@@ -1,0 +1,541 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Poppins:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --heading: 'Poppins', sans-serif;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+}
+
+/* global styling */
+
+img{
+  width: 100%;
+}
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+hr{
+  width: 95vw;
+  margin: 0 auto;
+}
+
+/******* js related styling *****/
+
+.times-btn{
+  display: none;
+}
+
+.nav-bar{
+  background: #333;
+  height: 0;
+  overflow: hidden;
+}
+
+.show-nav{
+  height: auto;
+}
+
+/* ================================= INI CSS BUAT NAVBAR DAN KATEGORI BERITA ================================== */
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 70px;
+  background: #E6AA48;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+nav .navbar{
+  height: 100%;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+
+  padding: 0 50px;
+}
+.navbar .logo a{
+  font-size: 30px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .navbar .nav-links{
+  line-height: 70px;
+  height: 100%;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 14px;
+}
+nav .navbar .links li a{
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+  }
+
+nav .navbar .links li .arrow{
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: #000;
+  transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: #E6AA48;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+  display: none;
+  z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+.navbar .links li .sub-menu .more-arrow{
+  line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+  /* line-height: 40px; */
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0 4px 4px 4px;
+  z-index: 1;
+  display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+  display: block;
+}
+.navbar .search-box{
+  position: relative;
+   height: 40px;
+  width: 40px;
+}
+.navbar .search-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .search-box .input-box{
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80px;
+  height: 60px;
+  width: 300px;
+  background: #E6AA48;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.navbar.showInput .search-box .input-box{
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: #E6AA48;
+}
+.search-box .input-box::before{
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #E6AA48;
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+.search-box .input-box input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 280px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+}
+.navbar .nav-links .sidebar-logo{
+  display: none;
+}
+.navbar .bx-menu{
+  display: none;
+}
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .logo a{
+    font-size: 27px;
+  }
+  nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav .navbar .links li a{
+    font-size: 15px;
+  }
+}
+@media (max-width:800px){
+  nav{
+    /* position: relative; */
+  }
+  .navbar .bx-menu{
+    display: block;
+  }
+  nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  #E6AA48;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+  .navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #000;
+  }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+      font-size: 25px;
+      color: #000;
+    }
+  nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+  }
+  nav .navbar .links li .arrow{
+    line-height: 40px;
+  }
+nav .navbar .links li{
+    display: block;
+  }
+nav .navbar .links li .sub-menu{
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  display: none;
+}
+nav .navbar .links li .sub-menu li{
+  border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  display: none;
+  position: relative;
+  left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(0deg);
+  }
+  .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+  }
+  .navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+  }
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu{
+      display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+}
+    .navbar .nav-links.show2 .links .more-arrow{
+      transform: rotate(90deg);
+    }
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+  max-width: 100%;
+  } 
+}
+
+/* content */
+
+div{
+  display: block;
+}
+
+.single-blog-wrapper {
+    box-sizing: border-box;
+    margin-top: 70px; /* Sesuaikan nilai dengan jarak yang diinginkan */
+}
+
+ .thumbnail img{
+    width: 100%;
+}
+
+  
+.single-blog-wrapper .section-padding-0-100 {
+    width: 500px;
+    margin: 0 10px 10px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.comment-author img{
+  margin-top: 5px;
+    width: 15%;
+    border-radius: 90px;
+    border-color: #E6AA48;
+
+}
+
+.container .row .col-12{
+  width: 80%;
+  border: 1px solid white;
+  margin: 50px 50px 50px 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 80px;
+  box-shadow: 0px 0px 10px 1px rgb(165, 165, 165) ;
+}
+
+.post-thumbnail img{
+    height: 150px;
+    width: 150px;
+}
+
+.single-blog-area {
+    color: #a1a1a1;
+    font-size: 11px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.single-blog-content{
+  margin-left: 20px ;
+}
+.single-blog-content .title-content{
+  margin-top: 10px;
+  color: #000;
+  display: flex;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.single-blog-content .author-content{
+  margin-top: 0;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+.single-blog-content .date-content a{
+  margin-top: 0;
+  color: #000;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.single-blog-content p{
+  text-align: justify;
+  font-style: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+.container .garis{
+  border: none;
+  border-bottom: 1px solid #000; /* Adding a bottom border to the h5 element */
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .garis-horizontal {
+    width: 90%; /* Mengurangi lebar pada layar yang lebih kecil */
+  }
+}
+
+.comment_area h5 span{
+  margin-left: 10px;
+  border-bottom: 2px solid #000; /* Adding a bottom border to the h5 element */
+  padding-bottom: 2px;
+  font-size: 17px;
+}
+
+.single_comment_area .comment-meta 
+
+ 
+.single-blog-area.blog-style-2 .single-blog-content  p{
+  margin-bottom: 30px;
+} 
+
+.single-blog-area .single-blog-content p{
+  line-height: 2;
+  margin-bottom: 70px;
+}
+
+p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 0;
+  margin-bottom: 1rem;  
+  color: #878787;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: "helveticaneuemedium";
+}
+
+
+/* komentar */
+.comment-box{
+  width: 50%;
+  border: 1px solid white;
+  margin: 50px 50px 50px 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 80px;
+  box-shadow: 0px 0px 10px 1px rgb(165, 165, 165) ;
+}
+
+.comment-box p{
+  text-align: left;
+  font-size: 28px;
+  color: #777;
+}
+
+.comment-form input, .comment-form textarea{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  color: #777;
+}
+
+.comment-form button{
+  margin: 10px 0;
+  border: none;
+  background-color: #E6AA48;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  color: black;
+  font-weight: 600;
+}
+
+.comment-form button:hover{
+  color: white;
+  background-color: black;
+  font-weight: 700;
+}
+
+@media(max-widh: 900px){
+  .comment-box{
+    width: 80%;
+    margin: 5%;
+  }
+}
+
+
+
+  
+ 
