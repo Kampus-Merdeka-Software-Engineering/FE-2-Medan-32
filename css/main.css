@@ -16,6 +16,7 @@
 body{
   font-family: 'Poppins', sans-serif;
   background: #fff;
+  cursor: pointer;
 }
 
 /* global styling */
@@ -28,7 +29,7 @@ ul{
 }
 
 a{
-  width: ;
+  /* width: ; */
   text-decoration: none;
   color: #000;
 }
@@ -388,7 +389,7 @@ nav .navbar .links li .sub-menu li{
 }
 
 .banner-main-content h2{
-  padding-top: 3rem;
+  padding-top: 10rem;
   font-size: 2rem;
   font-family: var(--heading);
 }
@@ -532,7 +533,8 @@ main a:hover{
 }
 
 .main-container-left > h2{
-  padding: 15px 0 15px 30px;
+  padding: 70px 0 15px 30px;
+
 }
 
 .main-container-left h3{
@@ -566,7 +568,7 @@ main a:hover{
 }
 
 .main-container-right > h2{
-  padding: 15px 0 15px 30px;
+  padding: 70px 0 15px 30px;
 }
 
 .main-container-right article{
@@ -614,7 +616,7 @@ main a:hover{
 
 footer{
   background: #E6AA48;
-  color: #black;
+  color: black;
   padding: 30px;
 }
 

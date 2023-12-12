@@ -73,7 +73,6 @@ nav .navbar{
   align-items: center;
   justify-content: space-between;
   margin: auto;
-
   padding: 0 50px;
 }
 .navbar .logo a{
@@ -103,15 +102,15 @@ nav .navbar .links li a{
   white-space: nowrap;
   color: #000;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
+
 .links li:hover .htmlcss-arrow,
 .links li:hover .js-arrow{
   transform: rotate(180deg);
   }
 
 nav .navbar .links li .arrow{
-  /* background: red; */
   height: 100%;
   width: 22px;
   line-height: 70px;
@@ -140,9 +139,9 @@ nav .navbar .links li:hover .js-sub-menu{
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .navbar .links li .sub-menu a{
-  color: #000;
+  color: black;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
@@ -161,6 +160,23 @@ nav .navbar .links li:hover .js-sub-menu{
 .links li .sub-menu .more:hover .more-sub-menu{
   display: block;
 }
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  width: 100px;
+}
+
+.logo-name img{
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+
 .navbar .search-box{
   position: relative;
    height: 40px;
@@ -349,6 +365,7 @@ nav .navbar .links li .sub-menu li{
 
 /* content */
 
+
 div{
   display: block;
 }
@@ -360,6 +377,7 @@ div{
 
  .thumbnail img{
     width: 100%;
+    height: 350px;
 }
 
   
@@ -385,19 +403,26 @@ div{
 
 }
 
-.container .row .col-12{
-  width: 80%;
-  border: 1px solid white;
-  margin: 50px 50px 50px 50px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: 80px;
-  box-shadow: 0px 0px 10px 1px rgb(165, 165, 165) ;
-}
+.col-12 .single-blog-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border: 1px solid white;
+    padding-right: 10px;
+    margin: 50px auto; /* Adjusted margin for centering horizontally */
+    margin-top: -60px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px 1px rgb(165, 165, 165);
+  }
+
+
 
 .post-thumbnail img{
-    height: 150px;
-    width: 150px;
+    text-align: center;
+    justify-content: center;
 }
 
 .single-blog-area {
@@ -410,12 +435,15 @@ div{
 .single-blog-content{
   margin-left: 20px ;
 }
-.single-blog-content .title-content{
+
+.single-blog-content .title-content h1{
   margin-top: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
   color: #000;
   display: flex;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .single-blog-content .author-content{
@@ -436,19 +464,11 @@ div{
   font-style: 'Poppins', sans-serif;
   font-size: 15px;
   color: #000;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.container .garis{
-  border: none;
-  border-bottom: 1px solid #000; /* Adding a bottom border to the h5 element */
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 768px) {
-  .garis-horizontal {
-    width: 90%; /* Mengurangi lebar pada layar yang lebih kecil */
-  }
-}
+
 
 .comment_area h5 span{
   margin-left: 10px;
@@ -457,17 +477,6 @@ div{
   font-size: 17px;
 }
 
-.single_comment_area .comment-meta 
-
- 
-.single-blog-area.blog-style-2 .single-blog-content  p{
-  margin-bottom: 30px;
-} 
-
-.single-blog-area .single-blog-content p{
-  line-height: 2;
-  margin-bottom: 70px;
-}
 
 p{
   display: block;
@@ -478,26 +487,30 @@ p{
   margin-top: 0;
   margin-bottom: 1rem;  
   color: #878787;
-  font-size: 14px;
   line-height: 1.4;
   font-family: "helveticaneuemedium";
 }
 
+#full-news-content p{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 
 /* komentar */
-.comment-box{
-  width: 50%;
+.comment-box {
+  width: 78%;
   border: 1px solid white;
-  margin: 50px 50px 50px 50px;
   padding: 10px 20px;
   border-radius: 5px;
-  margin-top: 80px;
-  box-shadow: 0px 0px 10px 1px rgb(165, 165, 165) ;
+  box-shadow: 0px 0px 10px 1px rgb(165, 165, 165);
+  margin: 80px auto 50px auto; /* Menyusun margin secara otomatis untuk memposisikan di tengah */
 }
 
 .comment-box p{
+  font-family: 'Poppins', sans-serif;
   text-align: left;
-  font-size: 28px;
+  font-size: 17px;
   color: #777;
 }
 
@@ -506,27 +519,32 @@ p{
   padding: 10px;
   margin: 5px 0;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 13px;
   border: 1px solid #ddd;
   color: #777;
 }
 
-.comment-form button{
-  margin: 10px 0;
+.comment-form button {
+  display: block; /* Mengubah button menjadi block agar dapat menggunakan margin */
+  margin: 20px auto 10px auto; /* Mengatur margin atas dan bawah 20px, dan secara otomatis memposisikan horizontalnya di tengah */
   border: none;
   background-color: #E6AA48;
   padding: 10px;
-  font-size: 18px;
-  border-radius: 3px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 1px rgb(240, 194, 87);;
   color: black;
   font-weight: 600;
+  text-align: center; /* Memastikan teks berada di tengah tombol */
+  width: fit-content; /* Mengatur lebar tombol sesuai dengan teks di dalamnya */
 }
 
 .comment-form button:hover{
   color: white;
-  background-color: black;
   font-weight: 700;
+  background-color: black;
 }
+
 
 @media(max-widh: 900px){
   .comment-box{
@@ -537,5 +555,49 @@ p{
 
 
 
-  
- 
+
+
+/* Area komentar */
+.comment_area {
+  margin-top: 70px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.comment_area  ol{
+  list-style: none;
+}
+
+
+.single_comment_area {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+
+}
+
+.comment {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+h4.post-author{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 7px;
+}
+
+p.post-comment {
+  font-size: 16px;
+  color: #888;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.post-date span {
+  margin-top: 0;
+  font-size: 10px;
+  color: #888;
+  text-decoration: none;
+}

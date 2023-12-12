@@ -1,5 +1,4 @@
-const baseUrl = "https://be-medan-32.adaptable.app/news/category";
-const baseUrlOther = "https://be-medan-32.adaptable.app/news/other?limit=6";
+const baseUrl = "https://be-medan-32.adaptable.app";
 
 const containerTopLeftElement = document.getElementById("top-left");
 const containerBottomLeftElement = document.getElementById("bottom-left");
@@ -7,7 +6,7 @@ const containerRightElement = document.getElementById("container-right");
 
 const fetchDataTopLeft = async () => {
   try {
-    const response = await fetch(`${baseUrl}/sports`, { method: "GET" });
+    const response = await fetch(`${baseUrl}/news/category/sports`, { method: "GET" });
     const data = await response.json();
 
     //nampilin 1 berita yg paling awal diambil API
@@ -22,7 +21,7 @@ const fetchDataTopLeft = async () => {
         <div>
           <h3>${article.title}</h3>
           <p>${article.description}</p>
-          <a onclick="redirectToDetail()">Read More <span>>></span></a>
+          <a onclick="redirectToDetail(${article.id})">Read More <span>>></span></a>
         </div>
       </article>
     `;
@@ -35,7 +34,7 @@ const fetchDataTopLeft = async () => {
 
 const fetchDataBottomLeft = async () => {
   try {
-    const response = await fetch(`${baseUrl}/sports`, { method: "GET" });
+    const response = await fetch(`${baseUrl}/news/category/sports`, { method: "GET" });
     const data = await response.json();
 
     const newsException = data[0];
@@ -53,7 +52,7 @@ const fetchDataBottomLeft = async () => {
           <div>
             <h3>${article.title}</h3>
             <p>${article.description}</p>
-            <a onclick="redirectToDetail()">Read More <span>>></span></a>
+            <a onclick="redirectToDetail(${article.id})">Read More <span>>></span></a>
           </div>
         </article>
       `;
@@ -67,7 +66,7 @@ const fetchDataBottomLeft = async () => {
 
 const fetchDataRight = async () => {
   try {
-    const response = await fetch(`${baseUrlOther}`, { method: "GET" });
+    const response = await fetch(`${baseUrl}/news/other?limit=6`, { method: "GET" });
     const data = await response.json();
 
     data.forEach((article) => {
@@ -86,7 +85,7 @@ const fetchDataRight = async () => {
             ${article.description}
           </p>
 
-          <a onclick="redirectToDetail()">Read More <span>>></span></a>
+          <a onclick="redirectToDetail(${article.id})">Read More <span>>></span></a>
         </div>
         <img src="${article.urlToImage}" />
         </article> 
@@ -99,10 +98,10 @@ const fetchDataRight = async () => {
   }
 };
 
-// function redirectTodetail(id) {
-//   console.log("redirect to detail");
-//   window.location.href = `https://be-medan-32.adaptable.app/news/${id}`;
-// }
+async function redirectToDetail(id) {
+  console.log("redirect to detail");
+  window.location.href = `subMain.html?id=${id}`;
+}
 
 // Panggil fungsi fetchData
 fetchDataTopLeft();
